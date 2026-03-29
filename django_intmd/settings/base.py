@@ -210,3 +210,7 @@ MEDIA_ROOT = STATIC_ROOT / "media"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 既存のコード
+
+AUTH_USER_MODEL = "matching_app.User"
