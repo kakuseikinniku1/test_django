@@ -56,5 +56,5 @@ def signup(request: HttpRequest) -> HttpResponse:
         return render(
             request,
             "signup.html",
-            {"form", form},
+            {"form": form},
         )

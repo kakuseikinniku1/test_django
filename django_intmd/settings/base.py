@@ -214,3 +214,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # 既存のコード
 
 AUTH_USER_MODEL = "matching_app.User"
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "user_home"
