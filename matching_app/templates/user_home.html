@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_menu.html" %}
 {% load static %}
 
 {% block title %}Home{% endblock %}
@@ -41,12 +41,18 @@
                     <span class="profile-value">{{ user_profile.biography }}</span>
                 </p>
             </div>
+            <!-- 既存のコード -->
+
             <div class="profile-actions">
+                <form method="get" action="{% url 'user_profile_update' %}">
+                    <button type="submit" class="submit-button">Edit Profile</button>
+                </form>
                 <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn-logout">Logout</button>
+                    <button type="submit" class="btn-alert">Logout</button>
                 </form>
             </div>
+
         </div>
     </div>
 </div>
