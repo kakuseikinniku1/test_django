@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import Any
 
 MIN_BIRTH_YEAR = 1920
@@ -39,3 +39,5 @@ def is_over_18_years_old(day_of_birth: datetime.date) -> bool:
     else:
         return False
     
+def calculate_expiration_time(from_time: datetime, timedelta: timedelta) -> datetime:
+    return from_time + timedelta

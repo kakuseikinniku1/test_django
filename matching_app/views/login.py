@@ -1,5 +1,5 @@
 import structlog
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_http_methods
@@ -27,3 +27,8 @@ def login_view(request: HttpRequest) -> HttpResponse:
     else:
         form = LoginForm()
     return render(request, "login.html", {"form": form})
+
+@require_http_methods(["POST"])
+def logout_view(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return redirect("index")
